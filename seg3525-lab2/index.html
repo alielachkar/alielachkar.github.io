@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+	<link href="styles.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+
+<body>
+
+    <h1>Loblaws</h1>
+
+<!-- Tab links, each one with an onclick event associated with it -->
+<div class="tab">
+  <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+  <button class="tablinks" onclick="openInfo(event, 'Products')">Produits</button>
+  <button class="tablinks" onclick="openInfo(event, 'Cart')">Chariot</button>
+</div>
+
+<!-- Tab content -->
+<div id="Client" class="tabcontent">
+  <h3>Informations sur le client</h3>
+  <p>Parlez-nous de vous</p>
+	Choisissez une ou plusieurs catégorie:<br>
+	<select multiple id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+	<option value="Lactose">Intolérant(e) au lactose</option>
+    <option value="Nuts">Allergique aux noix</option>
+    <option value="Organic">Organique</option>
+    <option value="None">Aucune</option>
+	</select>
+</div>
+
+<div id="Products" class="tabcontent">
+  <h3>Vos produits cibles</h3>
+  <p>Nous avons présélectionné des produits en fonction de vos restrictions.</p>
+	Choisissez les articles à acheter :
+	<div id="displayProduct"></div>
+	<button id="addCart" type="button" class="block" onclick="selectedItems()">
+		Ajoutez les articles sélectionnés au panier.
+	</button>
+</div>
+
+<div id="Cart" class="tabcontent">
+  <h3>Chariot</h3>
+  <p>Votre chariot</p>
+  <div id="displayCart"></div>
+</div>
+
+<h4>Site web conçu par Ali El Achkar</h4>
+
+
+<script src="groceries.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
