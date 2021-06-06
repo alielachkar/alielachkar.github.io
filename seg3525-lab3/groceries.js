@@ -100,31 +100,31 @@ function restrictListProducts(prods, restriction) {
 function restrictMutlipleListProducts(prods, restriction) {
     let product_names = [];
     for (let i=0; i<prods.length; i+=1) {
-        if((restriction[0].value == "Lactose") && (restriction[1].value == "Nuts")){
-            if((restriction[0].value == "Lactose") && (prods[i].lactose== true)){
-                if((restriction[1].value == "Nuts") && (prods[i].nuts== true)){
+        if((restriction[0] == "Lactose") && (restriction[1] == "Nuts")){
+            if((restriction[0] == "Lactose") && (prods[i].lactose== true)){
+                if((restriction[1] == "Nuts") && (prods[i].nuts== true)){
                     product_names.push(prods[i].name + ',' + prods[i].price);
                 }
             }
         }
-        else if((restriction[0].value == "Lactose") && (restriction[1].value == "Organic")){
-            if((restriction[0].value == "Lactose") && (prod[i].lactose== true)){
-                if((restriction[1].value == "Organic") && (prods[i].organic == true)){
+        else if((restriction[0] == "Lactose") && (restriction[1] == "Organic")){
+            if((restriction[0] == "Lactose") && (prod[i].lactose== true)){
+                if((restriction[1] == "Organic") && (prods[i].organic == true)){
                     product_names.push(prods[i].name + ', $' + prods[i].price);
                 }
             }
         }
-        else if((restriction[0].value == "Nuts") && (restriction[1].value == "Organic")){
-            if((restriction[0].value == "Nuts") && (prod[i].nut== true)){
-                if((restriction[1].value == "Organic") && (prods[i].organic == true)){
+        else if((restriction[0] == "Nuts") && (restriction[1] == "Organic")){
+            if((restriction[0] == "Nuts") && (prod[i].nut== true)){
+                if((restriction[1] == "Organic") && (prods[i].organic == true)){
                     product_names.push(prods[i].name + ', $' + prods[i].price);
                 }
             }
         }
         if(restriction.length == 3){
-            if((restriction[0].value == "Nuts") && (prods[i].nut== true)){
-                if((restriction[1].value == "Lactose") && (prods[i].lactose== true)){
-                    if((restriction[2].value == "Organic") && (prods[i].organic == true)){
+            if((restriction[0] == "Nuts") && (prods[i].nut== true)){
+                if((restriction[1] == "Lactose") && (prods[i].lactose== true)){
+                    if((restriction[2] == "Organic") && (prods[i].organic == true)){
                         product_names.push(prods[i].name + ', $' + prods[i].price);
                     }
                 }
