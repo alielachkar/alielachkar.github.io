@@ -1,0 +1,150 @@
+/* This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp> */
+
+
+body {
+  background-image: url("background.jpg");
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Montserrat';
+  vertical-align: middle;
+  color: rgb(255, 255, 255);
+}
+
+.header {
+  padding: 15px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* Style the tab */
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  margin: 10px;
+  background-color: rgba(49, 49, 49, 0.8);
+  width: 20%;
+  height: 320px;
+  text-indent: 10px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  display: block;
+  background-color: inherit;
+  color: rgb(255, 255, 255);
+  padding: 22px 16px;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: rgb(90, 90, 90);
+}
+
+.tab input[type=checkbox] {
+  margin: 5px;
+}
+
+.products {
+  margin-left: 500px;
+}
+
+.products button {
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  display: block;
+  background-color: rgba(49, 49, 49, 0.8);
+  color: rgb(255, 255, 255);
+  padding: 22px 16px;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.products button:hover {
+  background-color: rgb(90, 90, 90);
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: rgba(49, 49, 49, 0.8);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  float: right;
+}
+
+.openbtn:hover {
+  background-color: rgb(90, 90, 90);
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+footer {
+  position: fixed;
+  padding: 10px 10px 0px 10px;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}

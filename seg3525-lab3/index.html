@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+	<link href="styles.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div class="header">
+      <h1>Courses Xpress</h1>
+    </div>
+
+<!-- Tab links, each one with an onclick event associated with it 
+<div class="tab">
+  <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+  <button class="tablinks" onclick="openInfo(event, 'Products')">Produits</button>
+  <button class="tablinks" onclick="openInfo(event, 'Cart')">Chariot</button>
+</div>-->
+
+<button class="openbtn" onclick="openNav()">☰ Chariot</button>  
+
+<!-- Tab content -->
+<div id="Client" class="tab">
+  <h3>Informations sur le client</h3>
+	<p>Filtres:</p>
+    <input type="checkbox" id="Lactose" value="Lactose">
+    <label for="Lactose">Intolérant(e) au lactose</label><br>
+    <input type="checkbox" id="Nuts" value="Nuts">
+    <label for="Nuts">Allergique aux noix</label><br>
+    <input type="checkbox" id="Organic"  value="Organic">
+    <label for="Organic">Organiques</label><br>
+    <input type="checkbox" id="None"  value="None">
+    <label for="None">Aucun</label><br>
+    <button id="dietSelect" onclick="populateListProductChoices('displayProduct')">Voir Produits</button>
+  </form>
+  <input type="radio" name="deliv" value="delivery" id="delivery"><label for="delivery">Livraison</label></input>
+  <input type="radio" name="deliv" value="pickup" id="pickup"><label for="pickup">À emporter</label></input>
+</div> 
+
+<div id="Products" class="products">
+  <h3>Vos produits cibles</h3>
+  <p>Nous avons présélectionné des produits en fonction de vos restrictions.</p>
+	Choisissez les articles à acheter :
+	<div id="displayProduct"></div>
+	<button id="addCart" type="button" class="block" onclick="selectedItems()">
+		Ajoutez les articles sélectionnés au panier.
+	</button>
+</div>
+
+<div id="Cart" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <h3>Votre chariot</h3>
+  <div id="displayCart"></div>
+</div>
+
+<footer>
+  <h4>Site web conçu par Ali El Achkar</h4>
+</footer>
+
+<script src="groceries.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
