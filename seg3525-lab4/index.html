@@ -10,6 +10,7 @@
         <title>Module 4 Lab</title>
     </head>
     <body>
+    
         <ul class="nav justify-content-end bg-dark text-light">
             <li class="nav-item">
                 <h4><a class="nav-link" href="#">Call Us</a></h4>
@@ -20,37 +21,138 @@
         </ul>
 
         <div class="jumbotron text-center bg-dark text-light">
-            <h1 class="display-4">Ottawa Vet Clinic</h1>
+            <h1 class="display-4"><img src="images/vet_logo.png" width="130" height="130">Ottawa Vet Clinic</h1>
             <p class="lead">All kinds of care for all kinds of pets!</p>
             <hr class="my-4">
         </div>
-
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-                <h5><a class="nav-link" href="#">Online Consultation</a></h5>
-            </li>
-            <li class="nav-item">
-                <h5><a class="nav-link" href="#">Online Store</a></h5>
-            </li>
-            <li class="nav-item">
-                <h5><a class="nav-link" href="#">Ressources</a></h5>
-            </li>
-            <li class="nav-item">
-                <h5><a class="nav-link" href="#">About Us</a></h5>
-            </li>
-            <li class="nav-item">
-                <h5><a class="nav-link" href="#">Contact Us</a></h5>
-            </li>
-        </ul>
-
-        <div class="text-center">
-            <button type="button" class="btn btn-secondary btn-lg">Book An Appointment</button>
-        </div>
+        <div class = "container-lg">
 
         <div class="alert alert-warning" role="alert">
-            Our team continues to be here for you and your cherished pets. We are OPEN and are now able to provide a wide range of services. To learn more about the changes we have implemented in response to COVID-19 and what to expect during your next visit, click here.
+            Even with Covid-19, our team continues to be here for you and your cherished pets. We are OPEN and are now able to provide a wide range of services.
         </div>
 
+        <div class="alert alert-secondary" role="alert">
+            <h3>Welcome to Ottawa Vet Clinic</h3>
+            <p>Ottawa Vet Clinic was founded in 2008 by Dr. Dolittle. The location was chosen to serve the downtown core including the surrounding neighbourhoods of Centretown, Little Italy, Hintonburg, Lowertown, and Wellington Village with a full function veterinary hospital offering a complete range of services such as preventive, medical, surgical, and dental care, by considerate and compassionate staff. We invite you to come in and take a tour of our hospital!</p>
+            <p>Ottawa Vet Clinic is proud to be listed as one of the Top 3 Veterinary clinics in Ottawa, ON. This award is presented to veterinary hospitals based on reputation, history, ratings, location, satisfaction, trust and cost to the general excellence.</p>
+        </div>
+
+        <table class="table table-light table-hover" id="Appointments">
+            <thead>
+                <tr>
+                    <th scope="col"><h2>Service</h2></th>
+                    <th scope="col"><h2>Price</h2></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Online Consultation</td>
+                    <td>$150.0</td>
+                </tr>
+                <tr>
+                    <td>Vaccination</td>
+                    <td>$200.00</td>
+                </tr>
+                <tr>
+                    <td>Behavioural Counselling</td>
+                    <td>$150.00</td>
+                </tr>
+                <tr>
+                    <td>Dental Care</td>
+                    <td>$75.00</td>
+                </tr>
+                <tr>
+                    <td>Senior Care</td>
+                    <td>$150.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="text-center">
+            <button type="button" class="btn btn-secondary btn-lg" data-toggle="modal" data-target="#exampleModal">Book an Appointment</button>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Please enter all the necessary information</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form name="theform" action="/action_page.php">
+                            <h6 onKeyup="checkform()">Full Name</h6>
+                                <input type="text"><br><br>
+                            <h6>Email</h6>
+                                <input type="email" onKeyup="checkform()"><br><br>
+                            <h6>Your Pet</h6>
+                                <select>
+                                    <option>Dog</option>
+                                    <option>Cat</option>
+                                    <option>Horse</option>
+                                    <option>Fish</option>
+                                </select><br><br>
+                            <h6>Choose a service</h6>
+                                <label class="container">Online Consultation
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="container">Vaccination
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="container">Behavioural Counselling
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="container">Dental Care
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="container">Senior Care
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label><br><br>
+                            <h6>Choose a day</h6>
+                                <input type="date"><br><br>
+                            <h6>Choose a time</h6>
+                                <input type="time" id="appt" name="appt"><br><br>
+                            <p style="text-align:center">Make sure to check your email for your appointment confirmation!</p>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" id="submitbutton" class="btn btn-primary" disabled="disabled" data-dismiss="modal">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h1>Meet the Physicians!</h1>
+        <div class="row justify-content-around">
+            <div class="card" style="width: 18rem;">
+                <img src="images/doctor.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Here is some filler text, in here you can describe your doctor</p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="images/doctor.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Here is some filler text, in here you can describe your doctor</p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="images/doctor.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Here is some filler text, in here you can describe your doctor</p>
+                </div>
+            </div>
+        </div>
+
+        <!--
         <div class="footer bg-dark text-light">
             <a href="#" class="fa fa-facebook"></a>
             <a href="#" class="fa fa-twitter"></a>
@@ -58,9 +160,28 @@
             <a href="#" class="fa fa-linkedin"></a>
             <a href="#" class="fa fa-youtube"></a>
             <a href="#" class="fa fa-instagram"></a>
+            <h4>Site Web conçu par Ali El Achkar</h4>
         </div>
+        -->
+    </div>
+    
+        
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script type="text/javascript" language="javascript">
+        function checkform()
+        {
+            var f = document.forms["theform"].elements;
+            var cansubmit = true;
+    
+            for (var i = 0; i < f.length; i++) {
+                if (f[i].value.length == 0) cansubmit = false;
+            }
+            document.getElementById('submitbutton').disabled = !cansubmit;
+        }
+        </script> 
+        </script>
+
     </body>
 </html>
