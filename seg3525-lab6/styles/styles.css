@@ -12,6 +12,15 @@ body {
     background-image: url("background.jpg");
 }
 
+#navbar a {
+    color: #ffffff;
+}
+
+#navbar a:hover {
+    color: #7a7a7a;
+}
+
+
 .nav-link{
     color:slategrey;
 }
@@ -99,4 +108,8 @@ span.price {
     .col-25 {
         margin-bottom: 20px;
     }
+}
+
+iframe {
+    text-align: center;
 }

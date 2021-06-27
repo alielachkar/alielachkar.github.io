@@ -11,7 +11,7 @@
     </head>
     <body>
     
-        <ul class="nav bg-dark text-light navbar-expand-lg" id="navbar">
+        <ul class="nav bg-dark navbar-expand-lg" id="navbar">
             <a href="#"><img src="images/vet_logo.png" width="50" height="50"></a>
             <li class="nav-item">
                 <h4><a class="nav-link" href="#services">Services</a></h4>
@@ -75,10 +75,10 @@
         </table>
 
         <div class="text-center">
-            <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#exampleModal">Book an Appointment</button>
+            <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#modal">Book an Appointment</button>
         </div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -88,9 +88,10 @@
                         </button>
                     </div>
                     <div class="modal-body">
+                        <p style="text-align:center">Please note that we are closed from June 28th to June 30th for maintenance.</p>
                         <form name="theform" action="/action_page.php">
                             <h6>Full Name</h6>
-                                <input type="text" name="name"><br><br>
+                                <input type="text" placeholder="John Doe" name="name"><br><br>
                             <h6>Email</h6>
                                 <input type="email" placeholder="xyz@email.com" name="email"><br><br>
                             <h6>Tel</h6>
@@ -104,42 +105,63 @@
                                 </select><br><br>
                             <h6>Choose a service</h6>
                                 <label class="container">Online Consultation
-                                    <input type="checkbox">
+                                    <input type="checkbox" name="service1">
                                     <span class="checkmark"></span>
                                 </label><br>
                                 <label class="container">Vaccination
-                                    <input type="checkbox">
+                                    <input type="checkbox" name="service2">
                                     <span class="checkmark"></span>
                                 </label><br>
                                 <label class="container">Behavioural Counselling
-                                    <input type="checkbox">
+                                    <input type="checkbox" name="service3">
                                     <span class="checkmark"></span>
                                 </label><br>
                                 <label class="container">Dental Care
-                                    <input type="checkbox">
+                                    <input type="checkbox" name="service4">
                                     <span class="checkmark"></span>
                                 </label><br>
                                 <label class="container">Senior Care
-                                    <input type="checkbox">
+                                    <input type="checkbox" name="service5">
                                     <span class="checkmark"></span>
                                 </label><br><br>
                             <h6>Choose a member of our team</h6>
-                                <input type="radio" id="Dr. Dolittle" name="vet" value="Dr. Dolittle">
+                                <input type="radio" id="Dr. Dolittle" name="vet1" value="Dr. Dolittle">
                                 <label for="Dolittle">Dr. Dolittle</label><br>
-                                <input type="radio" id="Dr. Adams" name="vet" value="Dr. Adams">
+                                <input type="radio" id="Dr. Adams" name="vet2" value="Dr. Adams">
                                 <label for="Adams">Dr. Adams</label><br>
-                                <input type="radio" id="Dr. Lowe" name="vet" value="Dr. Lowe">
+                                <input type="radio" id="Dr. Lowe" name="vet3" value="Dr. Lowe">
                                 <label for="Lowe">Dr. Lowe</label><br><br>
                             <h6>Choose a day</h6>
-                                <input type="date" name="date"><br><br>
+                                <input type="date" name="date" min="2021-07-01"><br><br>
                             <h6>Choose a time</h6>
-                                <input type="time" id="appt" name="time"><br><br>
-                            <p style="text-align:center">Make sure to check your email for your appointment confirmation!</p>
+                            <select name="time">
+                                <option>8:00am</option>
+                                <option>8:30am</option>
+                                <option>9:00am</option>
+                                <option>9:30am</option>
+                                <option>10:00am</option>
+                                <option>10:30am</option>
+                                <option>11:00am</option>
+                                <option>11:30am</option>
+                                <option>12:00pm</option>
+                                <option>12:30pm</option>
+                                <option>1:00pm</option>
+                                <option>1:30pm</option>
+                                <option>2:00pm</option>
+                                <option>2:30pm</option>
+                                <option>3:00pm</option>
+                                <option>3:30pm</option>
+                                <option>4:00pm</option>
+                                <option>4:30pm</option>
+                                <option>5:00pm</option>
+                                <option>5:30pm</option>
+                                <option>6:00pm</option>
+                            </select><br><br>
                           </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
-                        <button type="button submit" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" data-target="#paymentModal">Submit</button> 
+                        <button type="button submit" class="btn btn-primary" data-toggle="modal" onClick="validateForm()">Submit</button> 
                     </div>
                 </div>
             </div>
@@ -161,7 +183,7 @@
                             <div class="col-50">
                               <h3>Billing Address</h3>
                               <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                              <input type="text" id="fname" name="firstname" placeholder="John M. Doe"><br><br>
+                              <input type="text" id="fname" name="name" placeholder="John M. Doe"><br><br>
                               <label for="email"><i class="fa fa-envelope"></i> Email</label>
                               <input type="text" id="email" name="email" placeholder="john@example.com"><br><br>
                               <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
@@ -172,11 +194,21 @@
                               <div class="row">
                                 <div class="col-50">
                                   <label for="province">Province</label>
-                                  <input type="text" id="province" name="province" placeholder="ON"><br><br>
-                                </div>
-                                <div class="col-50">
-                                  <label for="zip">Postal Code</label>
-                                  <input type="text" id="postalcode" name="postalcode" placeholder="K1N 6N5">
+                                  <select>
+                                    <option value="AB">Alberta</option>
+                                    <option value="BC">British Columbia</option>
+                                    <option value="MB">Manitoba</option>
+                                    <option value="NB">New Brunswick</option>
+                                    <option value="NL">Newfoundland and Labrador</option>
+                                    <option value="NS">Nova Scotia</option>
+                                    <option value="ON">Ontario</option>
+                                    <option value="PE">Prince Edward Island</option>
+                                    <option value="QC">Quebec</option>
+                                    <option value="SK">Saskatchewan</option>
+                                    <option value="NT">Northwest Territories</option>
+                                    <option value="NU">Nunavut</option>
+                                    <option value="YT">Yukon</option>
+                                </select><br><br>
                                 </div>
                               </div>
                             </div>
@@ -193,17 +225,11 @@
                               <label for="cname">Name on Card</label>
                               <input type="text" id="cname" name="cardname" placeholder="John More Doe"><br><br>
                               <label for="ccnum">Credit card number</label>
-                              <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"><br><br>
-                              <label for="expmonth">Exp Month</label>
-                              <input type="text" id="expmonth" name="expmonth" placeholder="September"><br><br>
+                              <input type="number" id="ccnum" name="cardnumber" placeholder="1111222233334444"><br><br>
                               <div class="row">
                                 <div class="col-50">
-                                  <label for="expyear">Exp Year</label>
-                                  <input type="text" id="expyear" name="expyear" placeholder="2018"><br><br>
-                                </div>
-                                <div class="col-50">
                                   <label for="cvv">CVV</label>
-                                  <input type="text" id="cvv" name="cvv" placeholder="352"><br><br>
+                                  <input type="number" id="cvv" name="cvv" placeholder="352"><br><br>
                                 </div>
                               </div>
                             </div>    
@@ -211,7 +237,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#confirmationModal">Pay</button>
+                    <button type="button" class="btn btn-primary"  data-toggle="modal" onClick="validatePayment()">Pay</button>
                 </div>
             </div>
             </div>
@@ -230,7 +256,7 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                Your appointment has been confirmed! You will receive an email in the next couple hours with all the details.
+                Your appointment has been confirmed [include date and time]! You will receive an email in the next couple hours with all the details.
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -275,7 +301,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><img src="images/address--v2.png" id="addressIcon" width="30" height="30" style="padding-right: 5px;">955 Somerset St W, Ottawa, K1R 6R8</td>
+                    <td></td>
                     <td>Monday</td>
                     <td>8:00 am - 6:00 pm</td>
                 </tr>
@@ -301,16 +327,21 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td>Saturday</td>
-                    <td>8:00 am - 12:00 pm</td>
-                </tr>
-                <tr>
-                    <td></td>
                     <td>After Hours Emergency: Ottawa Veterinary Hospital</td>
                     <td>613.725.1182</td>
                 </tr>
             </tbody>
         </table>
+        <iframe
+            width="100%"
+            height="500px"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+            id="gmap_canvas"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2801.066097882196!2d-75.71800598444439!3d45.40800667910043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce04487e41369f%3A0x92bf2bbfb7ab5da6!2s955%20Rue%20Somerset%20O%2C%20Ottawa%2C%20ON%20K1R%206R9!5e0!3m2!1sfr!2sca!4v1624816061556!5m2!1sfr!2sca">
+        </iframe>
         <br><br>
         <footer>
             <h4 style="text-align: center;">Site web conçu par Ali El Achkar</h4>
