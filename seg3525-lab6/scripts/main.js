@@ -16,6 +16,10 @@ function stickyNav() {
   }
 }
 
+var date;
+
+var vet;
+
 function validatePhone() {
   var a = document.theform.telephone.value;
   var filter = /\(?\d{3}\)?-? *\d{3}-? *-?\d{4}/;
@@ -89,7 +93,16 @@ function validateForm() {
     formValid = false;
     return formValid;
   } else {
-    formValid = true;
+    if(document.theform.vet1.checked) {
+      vet = document.theform.vet1.value;
+      formValid = true;
+    } else if(document.theform.vet2.checked) {
+      vet = document.theform.vet2.value;
+      formValid = true;
+    } else if(document.theform.vet3.checked) {
+      vet = document.theform.vet3.value;
+      formValid = true;
+    }
   }
 
   if(!document.theform.date.value) {
@@ -97,6 +110,7 @@ function validateForm() {
     formValid = false;
     return formValid;
   } else {
+    date = document.theform.date.value;
     formValid = true;
   }
 
@@ -195,6 +209,7 @@ function validatePayment() {
   if (formValid == true) {
     $('#confirmationModal').modal('show');
     $('#paymentModal').modal('hide');
+    document.getElementById('confirmationMessage').innerHTML = "Your appointment with " + vet + "has been confirmed for " + date + "! You will receive an email in the next couple hours with all the details.";
     return formValid;
   } else {
     $('#paymentModal').modal('show');
