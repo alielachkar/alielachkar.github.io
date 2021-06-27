@@ -1,0 +1,324 @@
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link href="styles/styles.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Module 5/6 Lab</title>
+    </head>
+    <body>
+    
+        <ul class="nav bg-dark text-light navbar-expand-lg" id="navbar">
+            <a href="#"><img src="images/vet_logo.png" width="50" height="50"></a>
+            <li class="nav-item">
+                <h4><a class="nav-link" href="#services">Services</a></h4>
+            </li>
+            <li class="nav-item">
+                <h4><a class="nav-link" href="#physicians">Our Team</a></h4>
+            </li>
+            <li class="nav-item">
+                <h4><a class="nav-link" href="#appointments">Find Us</a></h4>
+            </li>
+        </ul>
+        <br/>
+
+        <div class="jumbotron text-center bg-dark text-light">
+            <h1 class="display-4"><img src="images/vet_logo.png" width="130" height="130">Ottawa Vet Clinic</h1>
+            <p class="lead">All kinds of care for all kinds of pets!</p>
+            <hr class="my-4">
+        </div>
+
+        <div class="container-lg">
+
+        <div class="alert alert-warning" role="alert">
+            Even with Covid-19, our team continues to be here for you and your cherished pets. We are OPEN and are now able to provide a wide range of services.
+        </div>
+
+        <div class="alert alert-secondary" role="alert">
+            <h3>Welcome to Ottawa Vet Clinic</h3>
+            <p>Ottawa Vet Clinic was founded in 2008 by Dr. Dolittle. The location was chosen to serve the downtown core including the surrounding neighbourhoods of Centretown, Little Italy, Hintonburg, Lowertown, and Wellington Village with a full function veterinary hospital offering a complete range of services such as preventive, medical, surgical, and dental care, by considerate and compassionate staff. We invite you to come in and take a tour of our hospital!</p>
+            <p>Ottawa Vet Clinic is proud to be listed as one of the Top 3 Veterinary clinics in Ottawa, ON. This award is presented to veterinary hospitals based on reputation, history, ratings, location, satisfaction, trust and cost to the general excellence.</p>
+        </div>
+
+        <table id="services" class="table table-light">
+            <thead>
+                <tr>
+                    <th scope="col"><h2>Service</h2></th>
+                    <th scope="col"><h2>Price</h2></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Online Consultation</td>
+                    <td>$150.00</td>
+                </tr>
+                <tr>
+                    <td>Vaccination</td>
+                    <td>$200.00</td>
+                </tr>
+                <tr>
+                    <td>Behavioural Counselling</td>
+                    <td>$150.00</td>
+                </tr>
+                <tr>
+                    <td>Dental Care</td>
+                    <td>$125.00</td>
+                </tr>
+                <tr>
+                    <td>Senior Care</td>
+                    <td>$150.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="text-center">
+            <button type="button" class="btn btn-dark btn-lg" data-toggle="modal" data-target="#exampleModal">Book an Appointment</button>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Please enter all the necessary information</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form name="theform" action="/action_page.php">
+                            <h6>Full Name</h6>
+                                <input type="text" name="name"><br><br>
+                            <h6>Email</h6>
+                                <input type="email" placeholder="xyz@email.com" name="email"><br><br>
+                            <h6>Tel</h6>
+                                <input type="tel" placeholder="123-456-7890" name="telephone"><br><br>
+                            <h6>Your Pet</h6>
+                                <select name="pet">
+                                    <option>Dog</option>
+                                    <option>Cat</option>
+                                    <option>Horse</option>
+                                    <option>Fish</option>
+                                </select><br><br>
+                            <h6>Choose a service</h6>
+                                <label class="container">Online Consultation
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="container">Vaccination
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="container">Behavioural Counselling
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="container">Dental Care
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label><br>
+                                <label class="container">Senior Care
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label><br><br>
+                            <h6>Choose a member of our team</h6>
+                                <input type="radio" id="Dr. Dolittle" name="vet" value="Dr. Dolittle">
+                                <label for="Dolittle">Dr. Dolittle</label><br>
+                                <input type="radio" id="Dr. Adams" name="vet" value="Dr. Adams">
+                                <label for="Adams">Dr. Adams</label><br>
+                                <input type="radio" id="Dr. Lowe" name="vet" value="Dr. Lowe">
+                                <label for="Lowe">Dr. Lowe</label><br><br>
+                            <h6>Choose a day</h6>
+                                <input type="date" name="date"><br><br>
+                            <h6>Choose a time</h6>
+                                <input type="time" id="appt" name="time"><br><br>
+                            <p style="text-align:center">Make sure to check your email for your appointment confirmation!</p>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
+                        <button type="button submit" class="btn btn-primary" data-toggle="modal" data-dismiss="modal" data-target="#paymentModal">Submit</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Modal -->
+        <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="paymentModalLabel">Payment Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                    <form name="paymentform" action="/action_page.php">
+                        <div class="row">
+                            <div class="col-50">
+                              <h3>Billing Address</h3>
+                              <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                              <input type="text" id="fname" name="firstname" placeholder="John M. Doe"><br><br>
+                              <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                              <input type="text" id="email" name="email" placeholder="john@example.com"><br><br>
+                              <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                              <input type="text" id="adr" name="address" placeholder="542 W. 15th Street"><br><br>
+                              <label for="city"><i class="fa fa-institution"></i> City</label>
+                              <input type="text" id="city" name="city" placeholder="New York"><br><br>
+                  
+                              <div class="row">
+                                <div class="col-50">
+                                  <label for="province">Province</label>
+                                  <input type="text" id="province" name="province" placeholder="ON"><br><br>
+                                </div>
+                                <div class="col-50">
+                                  <label for="zip">Postal Code</label>
+                                  <input type="text" id="postalcode" name="postalcode" placeholder="K1N 6N5">
+                                </div>
+                              </div>
+                            </div>
+                  
+                            <div class="col-50">
+                              <h3>Payment</h3>
+                              <label for="fname">Accepted Cards</label>
+                              <div class="icon-container">
+                                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                                <i class="fa fa-cc-amex" style="color:blue;"></i>
+                                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                                <i class="fa fa-cc-discover" style="color:orange;"></i>
+                              </div>
+                              <label for="cname">Name on Card</label>
+                              <input type="text" id="cname" name="cardname" placeholder="John More Doe"><br><br>
+                              <label for="ccnum">Credit card number</label>
+                              <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"><br><br>
+                              <label for="expmonth">Exp Month</label>
+                              <input type="text" id="expmonth" name="expmonth" placeholder="September"><br><br>
+                              <div class="row">
+                                <div class="col-50">
+                                  <label for="expyear">Exp Year</label>
+                                  <input type="text" id="expyear" name="expyear" placeholder="2018"><br><br>
+                                </div>
+                                <div class="col-50">
+                                  <label for="cvv">CVV</label>
+                                  <input type="text" id="cvv" name="cvv" placeholder="352"><br><br>
+                                </div>
+                              </div>
+                            </div>    
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#confirmationModal">Pay</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+  
+        <!-- Confirmation Modal -->
+        <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="confirmationModalLabel">Appointement confirmed!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                Your appointment has been confirmed! You will receive an email in the next couple hours with all the details.
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <br>
+
+        <h1 id="physicians">Meet the Physicians!</h1><br>
+        <div class="row justify-content-around">
+            <div class="card" style="width: 18rem;">
+                <img src="images/doctor.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Dr. Dolittle can talk to animals. If that's not enough to trust him with your pets, we don't know what is.</p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="images/doctor2.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Dr. Adams obtained her Doctor of Veterinary Medicine degree from the Atlantic Veterinary College in PEI, then practiced in Pennsylvania and Toronto before returning to her native Ottawa.</p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="images/doctor3.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Dr. Lowe became interested in veterinary medicine after assisting her parents to breed and show Golden Retrievers for most of her life. Dr. Lowe graduated from Ontario Veterinary College in 2005.</p>
+                </div>
+            </div>
+        </div><br>
+
+        <h1>Contact us</h1><br>
+
+        <table class="table table-light table-borderless" id="appointments">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col"><h2>Hours of Operation</h2></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="images/address--v2.png" id="addressIcon" width="30" height="30" style="padding-right: 5px;">955 Somerset St W, Ottawa, K1R 6R8</td>
+                    <td>Monday</td>
+                    <td>8:00 am - 6:00 pm</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Tuesday</td>
+                    <td>8:00 am - 6:00 pm</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Wednesday</td>
+                    <td>8:00 am - 6:00 pm</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Thursday</td>
+                    <td>8:00 am - 6:00 pm</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Friday</td>
+                    <td>8:00 am - 6:00 pm</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Saturday</td>
+                    <td>8:00 am - 12:00 pm</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>After Hours Emergency: Ottawa Veterinary Hospital</td>
+                    <td>613.725.1182</td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+        <footer>
+            <h4 style="text-align: center;">Site web conçu par Ali El Achkar</h4>
+        </footer>
+    </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="scripts/main.js"></script> 
+    </body>
+</html>
