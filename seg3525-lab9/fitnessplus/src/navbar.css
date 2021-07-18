@@ -1,0 +1,7 @@
+#navbar {
+    background: 'rgba(247, 247, 247, 1)';
+    position: 'sticky';
+    flex: 1;
+    margin: auto;
+    display: flex;
+}
