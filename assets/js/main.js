@@ -103,6 +103,9 @@
         });
     });
 
+    // Initialize EmailJS with your Public Key
+    emailjs.init('P891H30oeqex26rtm');
+
     // Function to send the email using EmailJS.
     function sendEmail() {
         // Get form values
@@ -122,6 +125,9 @@
                 $('#name').val('');
                 $('#email').val('');
                 $('#message').val('');
+
+                // Show success modal
+                $('#successModal').modal('show');
             })
             .catch(function (error) {
                 console.error('Error sending email:', error);

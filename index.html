@@ -3,6 +3,10 @@
 	<head>
 		<title>Ali El Achkar</title>
 		<meta charset="utf-8" />
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+		<!-- Bootstrap JavaScript (including dependencies) -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
@@ -51,10 +55,6 @@
 								<p>Developed a glove using Raspberry Pi 4, Arduino Nano, and MPU 6050 to translate hand movements into American Sign Language (ASL).</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<h3>Quiver Forecast</h3>
-								<p>A machine learning model that forecasts stock prices or returns with Quiver Quantitative’s alternative data.</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
 								<h3>Real-time systems project</h3>
 								<p>Developed a subsystem to monitor and control energy levels from solar panels using an Arduino terminal.</p>
 							</article>
@@ -75,20 +75,14 @@
 									</div>
 								</form>
 								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
+									<li><input type="submit" value="Send Message" id="submitBtn" /></li>
 								</ul>
 							</div>
 							<div class="col-4 col-12-small">
 								<ul class="labeled-icons">
 									<li>
-										<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-										6-645 Rideau St.<br />
-										Ottawa, ON K1N 7W8<br />
-										Canada
-									</li>
-									<li>
 										<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
-										613-371-4727
+										613-366-9657
 									</li>
 									<li>
 										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
@@ -112,14 +106,30 @@
 				</div>
 			</footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+			<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="successModalLabel">Email Sent Successfully</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<p>Your email has been sent successfully.</p>
+						</div>
+					</div>
+				</div>
+			</div>
 
+		<!-- Scripts -->
+		<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.poptrox.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js" defer></script>		
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 	</body>
 </html>
